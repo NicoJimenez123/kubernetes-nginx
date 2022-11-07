@@ -4,7 +4,7 @@ metadata:
   name: nginx-service
 spec:
   type: NodePort
-  selector:
+  selector: # Seleccionador de los PODs
     run: my-nginx
   ports:
   - port: 80

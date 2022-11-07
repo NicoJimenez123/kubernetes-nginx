@@ -1,19 +1,19 @@
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: my-nginx
-spec:
-  selector:
-    matchLabels:
-      run: my-nginx
-  replicas: 2
-  template:
-    metadata:
-      labels:
+apiVersion: apps/v1 # Version de la API a usar
+kind: Deployment # Tipo de objeto que estamos creando
+metadata: # Información acerca del objeto que estamos creando
+  name: my-nginx # Nombre del objeto
+spec: # Especificaciones de nuestro objeto
+  selector: # Indica sobre cuales objetos se tendrá responsabilidad
+    matchLabels: 
+      run: my-nginx # Selector para los objetos
+  replicas: 2 # Número de PODs que deberían estar en funcionamiento
+  template: # Plantilla del POD que debe ser creado
+    metadata: 
+      labels: 
         run: my-nginx
     spec:
       containers:
-      - name: my-nginx
-        image: nginx
+      - name: my-nginx # Nombre del contenedor dentro del POD
+        image: nginx # Imagen del contenedor
         ports:
-        - containerPort: 80
+        - containerPort: 80 # Puerto del container dentro del POD
